@@ -13,7 +13,7 @@
     
     <div id="app" class="dbg_white">
         
-        <div id="app_left" class="dbg_red">
+        <div id="app_left">
 
             <div id="user_bar">
                 <img src="./assets/img/avatar_io.jpg" alt="">
@@ -38,10 +38,15 @@
                 </div>
             </div>
 
-            <div id="contacts"></div>
+            <div id="contacts">
+                <div v-for="contact in contacts" class="contact" @click="selectChat">
+                    <img :src="contact.avatar" alt="" class="contact_img">
+                    <span>{{contact.name}}</span>
+                </div>
+            </div>
         </div>
 
-        <div id="app_right" class="dbg_blue">
+        <div id="app_right">
 
             <div id="top_bar">
                 <div id="current_chat_user"></div>
@@ -52,7 +57,11 @@
                 </div>
             </div>
             
-            <div id="chat_container"></div>
+            <div id="chat_container">
+                <div v-for="message in contacts.messages">
+                    <div>{{message.text}}</div>
+                </div>
+            </div>
 
             <div id="message_bar">
                 <i class="far fa-smile"></i>

@@ -149,6 +149,24 @@ body {
 
     /* contacts */
 
+.contact {
+    background-color: #FFFFFF;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+}
+
+.contact span {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact_img {
+    height: 80px;
+    border-radius: 50%;
+}
 
 /* app right */
 
