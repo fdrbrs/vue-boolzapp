@@ -158,6 +158,10 @@ body {
     align-items: center;
 }
 
+.contact:hover{
+    filter: brightness(0.9);
+}
+
 .contact span {
     margin-left: 1rem;
     font-size: 1.5rem;
@@ -192,6 +196,11 @@ body {
     background-image: url(../img/mine.jpg);
 }
 
+.sent, .recieved {}
+
+.sent{}
+
+.recieved{}
     /* message bar */
 
 #message_bar{
