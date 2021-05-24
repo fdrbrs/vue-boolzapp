@@ -39,7 +39,7 @@
             </div>
 
             <div id="contacts">
-                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)" :class="">
+                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)" :class="activeUser === index ? 'contact_active' : '' ">
                     <img :src="contact.avatar" alt="" class="contact_img">
                     <span>{{contact.name}}</span>
                 </div>
@@ -72,7 +72,7 @@
 
             <div id="message_bar">
                 <i class="far fa-smile"></i>
-                <input type="text" placeholder="Scrivi un messaggio" id="message_input" >
+                <input type="text" placeholder="Scrivi un messaggio" id="message_input" v-model="newMsg"  v-on:keyup.enter="sendText">
                 <i class="fas fa-microphone"></i>
             </div>
 
