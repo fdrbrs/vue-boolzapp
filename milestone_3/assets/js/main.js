@@ -95,9 +95,6 @@ const app = new Vue ({
             console.log(index);
             this.activeUser = index
         },
-        updateTimestap(){
-            
-        }
         ok(){
             this.contacts[this.activeUser].messages.push({text: 'ok', status: 'received', date: 'non ho capito come usare day.js'});
         },
@@ -107,6 +104,6 @@ const app = new Vue ({
             setTimeout(this.ok,1000)
 
         }
-
+        
     }
 })
