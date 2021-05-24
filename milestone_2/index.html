@@ -39,7 +39,7 @@
             </div>
 
             <div id="contacts">
-                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)">
+                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)" :class="">
                     <img :src="contact.avatar" alt="" class="contact_img">
                     <span>{{contact.name}}</span>
                 </div>
@@ -49,7 +49,13 @@
         <div id="app_right">
 
             <div id="top_bar">
-                <div id="current_chat_user"></div>
+                <div id="current_chat_user">
+                    <img :src="contacts[activeUser].avatar" alt="" class="contact_img">
+                    <div>
+                        <span id="current_user_name">{{contacts[activeUser].name}}</span>
+                        <span id="last_access">Ultimo accesso oggi alle</span>
+                    </div>
+                </div>
                 <div id="top_icons">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
@@ -59,7 +65,8 @@
             
             <div id="chat_container">
                 <div v-for="(element,index) in contacts[activeUser].messages" :class="element.status">
-                    <div>{{element.text}}</div>
+                    <span class="chat_text">{{element.text}}</span>
+                    <span class="chat_text_time">{{element.date}}</span>
                 </div>
             </div>
 
