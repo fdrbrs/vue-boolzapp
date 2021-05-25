@@ -4,24 +4,11 @@
     margin: 0;
 }
 
-/* DEBUG RULES */
-
-.dbg_white{
-    background-color: white;
-}
-
-.dbg_red{
-    background-color: red;
-}
-
-.dbg_blue{
-    background-color: blue;
-}
-
 /* General rules */
 
 body {
-    background-color: #CCD0CC;
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 130px, rgba(215,219,215,1) 130px);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -31,7 +18,7 @@ body {
 #app{
     width: 90%;
     margin: auto;
-    height: 96%;
+    height: calc(100vh - 60px);
     display: flex;
 }
 
