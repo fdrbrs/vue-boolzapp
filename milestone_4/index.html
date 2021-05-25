@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <div id="app" class="dbg_white">
+    <div id="app">
         
         <div id="app_left">
 
@@ -76,7 +76,7 @@
             </div>
             
             <div id="chat_container">
-                <div v-for="(element,index) in contacts[activeUser].messages" :class="element.status">
+                <div v-for="(element,index) in contacts[activeUser].messages" :class="element.status" @click="options">
                     <span class="chat_text">{{element.text}}</span>
                     <span class="chat_text_time">{{element.date}}</span>
                 </div>

@@ -171,7 +171,6 @@ const app = new Vue ({
     },
     methods: {
         changeActiveUser(index){
-            console.log(index);
             this.activeUser = index
         },
         ok(){
@@ -194,6 +193,9 @@ const app = new Vue ({
             }
 
             
+        },
+        options(){
+            console.log('click');
         }
         
     }
