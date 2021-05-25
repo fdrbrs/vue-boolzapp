@@ -96,10 +96,10 @@ const app = new Vue ({
             this.activeUser = index
         },
         ok(){
-            this.contacts[this.activeUser].messages.push({text: 'ok', status: 'received', date: 'non ho capito come usare day.js'});
+            this.contacts[this.activeUser].messages.push({text: 'ok', status: 'received', date: dayjs().format("DD/MM/YYYY HH:MM:ss")});
         },
         sendText(){
-            this.contacts[this.activeUser].messages.push({text: this.newMsg, status: 'sent', date: 'non ho capito come usare day.js'});
+            this.contacts[this.activeUser].messages.push({text: this.newMsg, status: 'sent', date: dayjs().format("DD/MM/YYYY HH:MM:ss")});
             this.newMsg = '';
             setTimeout(this.ok,1000)
 
