@@ -162,6 +162,7 @@ body {
 .contact_img {
     height: 80px;
     border-radius: 50%;
+    margin-left: 2rem;
 }
 
 .invisible {

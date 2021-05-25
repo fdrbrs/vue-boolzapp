@@ -44,6 +44,9 @@
                 >
                     <img :src="contact.avatar" alt="" class="contact_img">
                     <span >{{contact.name}}</span>
+                    <span>{{contact.messages[contact.messages.length - 1].date}}</span>
+                    <span>{{contact.messages[contact.messages.length -1].text}}</span>
+
                 </div>
                 <!-- 
                     class="contact"
