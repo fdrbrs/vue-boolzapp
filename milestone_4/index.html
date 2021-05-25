@@ -39,12 +39,19 @@
             </div>
 
             <div id="contacts">
-                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)"
-                :class="activeUser === index ? 'contact_active' : '' "
-                :class="contact.visible == false ? 'invisible' : '' ">
+                <div v-for="(contact,index) in contacts"  @click="changeActiveUser(index)"
+                :class="['contact', (activeUser === index ? 'contact_active' : ''), (contact.visible == false ? 'invisible' : '')]"
+                >
                     <img :src="contact.avatar" alt="" class="contact_img">
                     <span >{{contact.name}}</span>
                 </div>
+                <!-- 
+                    class="contact"
+                    :class="['classe-fissa', (condition1 === true ? 'classe-dinamica-1' : ''), (condition2 != '123' ? 'classe-dinamica-1' : 'classe-dinamica-3')]"
+
+                    :class="activeUser === index ? 'contact_active' : '' "
+                    :class="contact.visible == false ? 'invisible' : '' "
+                 -->
             </div>
         </div>
 
