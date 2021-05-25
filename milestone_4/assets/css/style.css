@@ -149,6 +149,11 @@ body {
 
     /* contacts */
 
+#contacts{
+    overflow-y: auto;
+    height: calc(100% - 260px);
+}
+
 .contact {
     background-color: #FFFFFF;
     height: 100px;
