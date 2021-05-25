@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+    
+    <div id="app" class="dbg_white">
+        
+        <div id="app_left">
+
+            <div id="user_bar">
+                <img src="./assets/img/avatar_io.jpg" alt="">
+                <span>Nome Utente</span>
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+            <div id="notifications">
+                <i class="fas fa-bell-slash"></i>
+                <div id="notifications_text">
+                    <span id="notifications_top_text">Ricevi notifiche di nuovi messaggi</span>
+                    <span id="notifications_sub_text">Attiva notiche desktop</span>
+                </div>
+            </div>
+
+            <div id="search_bar">
+                <div id="search_box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" v-on:keyup="searchContact">
+                </div>
+            </div>
+
+            <div id="contacts">
+                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)" :class="activeUser === index ? 'contact_active' : '' ">
+                    <img :src="contact.avatar" alt="" class="contact_img">
+                    <span>{{contact.name}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="app_right">
+
+            <div id="top_bar">
+                <div id="current_chat_user">
+                    <img :src="contacts[activeUser].avatar" alt="" class="contact_img">
+                    <div>
+                        <span id="current_user_name">{{contacts[activeUser].name}}</span>
+                        <span id="last_access">Ultimo accesso oggi alle</span>
+                    </div>
+                </div>
+                <div id="top_icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            
+            <div id="chat_container">
+                <div v-for="(element,index) in contacts[activeUser].messages" :class="element.status">
+                    <span class="chat_text">{{element.text}}</span>
+                    <span class="chat_text_time">{{element.date}}</span>
+                </div>
+            </div>
+
+            <div id="message_bar">
+                <i class="far fa-smile"></i>
+                <input type="text" placeholder="Scrivi un messaggio" id="message_input" v-model="newMsg"  v-on:keyup.enter="sendText">
+                <i class="fas fa-microphone"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- tiziano help -->
+    <!-- usare indice oer la selezione della chat -->
+    <!-- la prima chat aperta deve essere la 0
+    creo dentro i data
+    activeUser: 0,
+    così di default prende la prima
+    mette {{activeUser}} in chat box per stampare indice
+    sul click sovrascrive indice
+    aggiunge index in contact in contacts
+    (contact,index) in contacts
+    mette @click="changeActiveUser(index)"
+    crea metodo:
+
+    changeActiveUser(index){
+        console.log(index)
+        this.activeUser = index
+    }
+
+    per accedere al name:
+
+    contacts[1].name
+
+    dinamico
+    contacts[activeUser].name
+
+    messages:
+
+    v-for="(element,index) in contacts[activeUser.messages"
+
+    {{element.message}}
+
+    aggiunge classe reattiva
+
+    :class="element.status"
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
