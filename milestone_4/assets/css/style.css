@@ -172,6 +172,9 @@ body {
     border-radius: 50%;
 }
 
+.red {
+    display: none;
+}
 /* app right */
 
     /* top bar */

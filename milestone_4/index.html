@@ -39,9 +39,10 @@
             </div>
 
             <div id="contacts">
-                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)" :class="activeUser === index ? 'contact_active' : '' ">
+                <div v-for="(contact,index) in contacts" class="contact" @click="changeActiveUser(index)"
+                :class="activeUser === index ? 'contact_active' : '' ">
                     <img :src="contact.avatar" alt="" class="contact_img">
-                    <span>{{contact.name}}</span>
+                    <span :class="contact.visible == false ? 'red' : '' ">{{contact.name}}</span>
                 </div>
             </div>
         </div>
