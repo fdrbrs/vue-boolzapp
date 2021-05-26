@@ -13,8 +13,10 @@
     
     <div id="app">
         
+        <!-- Left Side of App -->
         <div id="app_left">
 
+            <!-- User Bar -->
             <div id="user_bar">
                 <img src="./assets/img/avatar_io.jpg" alt="">
                 <span>Nome Utente</span>
@@ -23,9 +25,10 @@
                     <i class="fas fa-comment-alt"></i>
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
-                
+            <!-- /User Bar -->
             </div>
 
+            <!-- Activate Notifications Bar -->
             <div id="notifications">
                 <i class="fas fa-bell-slash"></i>
                 <div id="notifications_text">
@@ -33,14 +36,18 @@
                     <span id="notifications_sub_text">Attiva notiche desktop</span>
                 </div>
             </div>
+            <!-- /Activate Notifications Bar -->
 
+            <!-- Search Bar for Contacts -->
             <div id="search_bar">
                 <div id="search_box">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" v-on:keyup="searchContact">
                 </div>
             </div>
+            <!-- /Search Bar for Contacts -->
 
+            <!-- Contacts List -->
             <div id="contacts">
                 <div v-for="(contact,index) in contacts"  @click="changeActiveUser(index)"
                 :class="['contact', (activeUser === index ? 'contact_active' : ''), (contact.visible == false ? 'invisible' : '')]"
@@ -56,10 +63,15 @@
 
                 </div>
             </div>
-        </div>
+            <!-- /Contacts List -->
 
+        </div>
+        <!-- /Left Side of App -->
+
+        <!-- Right Side of App -->
         <div id="app_right">
 
+            <!-- Active User Bar -->
             <div id="top_bar">
                 <div id="current_chat_user">
                     <img :src="contacts[activeUser].avatar" alt="" class="contact_img">
@@ -76,21 +88,28 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
-            
+            <!-- /Active User Bar -->
+
+            <!-- Chat Container -->
             <div id="chat_container">
                 <div v-for="(element,index) in contacts[activeUser].messages" :class="element.status" @click="options">
                     <span class="chat_text">{{element.text}}</span>
                     <span class="chat_text_time">{{element.date}}</span>
                 </div>
             </div>
+            <!-- /Chat Container -->
 
+            <!-- Input Message Bar -->
             <div id="message_bar">
                 <i class="far fa-smile"></i>
                 <input type="text" placeholder="Scrivi un messaggio" id="message_input" v-model="newMsg"  v-on:keyup.enter="sendText">
                 <i class="fas fa-microphone"></i>
             </div>
+            <!-- /Input Message Bar -->
+
 
         </div>
+        <!-- /Right Side of App -->
 
     </div>
 
