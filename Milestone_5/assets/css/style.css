@@ -262,22 +262,26 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 300px;
+    max-width: 75%;
 }
 
 .sent{
     background-color: #D5F9BA;
     justify-content: flex-end;
     align-self: flex-end;
+    margin-right: 80px;
 }
 
 .received{
     background-color: #FFFFFF;
     align-items: flex-start;
     align-self: flex-start;
+    margin-left: 80px;
 }
 
 .chat_text {
     font-size: 1.2rem;
+    word-wrap: break-word;
 }
 
 .chat_text_time{
