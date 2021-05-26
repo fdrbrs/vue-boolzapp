@@ -18,9 +18,12 @@
             <div id="user_bar">
                 <img src="./assets/img/avatar_io.jpg" alt="">
                 <span>Nome Utente</span>
-                <i class="fas fa-circle-notch"></i>
-                <i class="fas fa-comment-alt"></i>
-                <i class="fas fa-ellipsis-v"></i>
+                <div id="user_bar_icons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+                
             </div>
 
             <div id="notifications">
@@ -62,7 +65,9 @@
                     <img :src="contacts[activeUser].avatar" alt="" class="contact_img">
                     <div>
                         <span id="current_user_name">{{contacts[activeUser].name}}</span>
-                        <span id="last_access">Ultimo accesso oggi alle</span>
+                        <span id="last_access">Ultimo accesso: 
+                            {{contacts[activeUser].messages[contacts[activeUser].messages.length - 1].date}}
+                        </span>
                     </div>
                 </div>
                 <div id="top_icons">
